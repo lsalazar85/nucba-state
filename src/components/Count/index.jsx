@@ -1,7 +1,8 @@
-import { useState, useEffect } from "react"
+import { useEffect, useContext } from "react"
+import NucbaContext from "../../context/NucbaContext";
 
 const Count = () => {
-    const [count, setCount] = useState(false)
+    const { count, setCount } = useContext(NucbaContext)
 
     useEffect(() => {
         const getCount = () => {
@@ -10,6 +11,8 @@ const Count = () => {
 
         count > 2 && getCount()
     }, [count])
+
+    console.log(count)
 
     return (
         <div>
